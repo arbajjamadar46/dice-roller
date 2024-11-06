@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+</head>
+<style>
+    
+.container{
+    background-color:#adadff;
+    width: 350px;
+    height: 450px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+.heading{
+    text-align: center;
+    font-size: 25px;
+    color: rgb(32, 32, 32);
+    margin: 25px;
+}
+#dice{
+   height: 180px;
+   margin: 20px 80px;
+}
+
+.roll-dice{
+    border-radius: 10px;
+    background-color: #3d3d6c;
+    border: 2px solid #ffffff; 
+    color: #ffffff;
+    height: 50px;
+    width: 180px;
+    margin: 30px 80px; 
+    padding: 12px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.roll-dice:hover{
+    box-shadow: 1px 2px 7px 2px rgb(82, 81, 80);
+}
+</style>
+<body>
+    
+    <div class="container">
+        <h3 class="heading">Click the button to roll the dice</h3>
+        <img src="dice1.png" id="dice"/>
+        <button class="roll-dice" type="button" onclick="rollDice()">Roll Dice</button>
+    </div>
+
+    <script>
+        function rollDice(){
+            const min = 1;
+            const max = 6;
+            const randomNumber = Math.round(Math.random() * (max-min))+min;
+            const imageDice = document.getElementById('dice');
+              
+            if(randomNumber == 1){
+                imageDice.src = 'dice1.png';
+            }
+            else if(randomNumber == 2){
+                imageDice.src = 'dice2.png';
+            }
+            else if(randomNumber == 3){
+                imageDice.src = 'dice3.png';
+            }
+            else if(randomNumber == 4){
+                imageDice.src = 'dice4.png';
+            }
+            else if(randomNumber == 5){
+                imageDice.src = 'dice5.png';
+            }
+            else if(randomNumber == 6){
+                imageDice.src = 'dice6.png';
+            }
+        }
+    </script>
+</body>
+</html>
